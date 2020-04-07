@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,33 +15,53 @@
 	.register-form{
 		width: 50%;
 		border: 2px solid steelblue;
-		padding: 20px;
+		padding: 10px;
 	}
 </style>
 <body>
-	<br>
-	<?php include 'navbar.php'; ?> 
-<center>
-	<div class="register-form">
-		<form>
-		  <div class="form-group">
-		    <label for="name">Name</label>
-		    <input type="email" class="form-control" id="name" name="name" placeholder="Enter Name">
-		  </div>
+	<?php include 'navbar.php'; ?>
 
-		  <div class="form-group">
-		    <label for="email">Email</label>
-		    <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
-		  </div>
+	<center>
+		<form class="register-form" method="post">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input class="form-control" type="text" name="firstname" placeholder="Enter FirstName">
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input class="form-control" type="email" name="email" placeholder="Enter Email">
+				</div>
 
-		  <div class="form-group">
-		  	<label for="age">Age</label>
-		    <input type="number" class="form-control" id="age">
-		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" name="register-btn" class="btn btn-primary">Register</button>
+				
 		</form>
-	</div>
-</center>
-	
+	</center>
+
 </body>
 </html>
+
+<?php
+
+include 'dbconnect.php';
+
+if(isset($_POST['register-btn'])){
+
+	/*print_r($_POST);*/
+
+	$firstname = $_POST['firstname'];
+	$email = $_POST['email'];
+
+	$insert = mysqli_query($connect,"INSERT INTO `user` (`name`,`email`) VALUES ('$firstname','$email')");
+
+	if($insert){
+
+		echo "Data Submit!";
+
+	}else{
+		echo "Submit Failed!";
+	}
+
+}
+
+
+?>
