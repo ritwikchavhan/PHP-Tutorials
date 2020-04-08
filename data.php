@@ -1,3 +1,27 @@
+<?php
+
+	
+	include 'dbconnect.php';
+
+	if (isset($_GET['id'])) {
+
+	$id = $_GET['id'];
+
+
+    $delete = mysqli_query($connect,"DELETE FROM `user` WHERE `id`=$id");
+    if ($delete) {
+
+    	echo "Data Deleted!";
+    }else{
+    	echo "Data Delete Failed!";
+    }
+
+		
+	}
+
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +61,12 @@
 
 			  		<td><?php echo $row['name'] ?></td>
 			  		<td><?php echo $row['email'] ?></td>
+
+			  		
+
+			  		<td><a href="data.php?id=<?php echo $row['id'] ?>">DELETE</a></td>
+
+			  		<td><a href="update.php?id=<?php echo $row['id'] ?>">EDIT</a></td>
 
 			  		</tr>
 			  	<?php 
