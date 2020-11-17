@@ -1,116 +1,106 @@
 <html>
-    <head>
-        <title>
-            Register List
-        </title>
-    </head>
-    <style>
-        html{
-            background-color: #56baed;
-        }
-        .wrapper{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-        .tablecontent{
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-        }
-        table{
-            border-collapse: collapse;
-        }
-        th,td{
-            border: 1px solid grey;
-            padding: 10px;
-        }
 
-        .delete{
-            background-color: #ff7675;
-            border: none;
-            padding: 10px;
-            font-size: 20px;
-            font-weight: 900;
-        }
-        .update{
-            background-color: #74b9ff;
-            border: none;
-            padding: 10px;
-            font-size: 20px;
-            font-weight: 900;
-        }
+<head>
+    <title>
+        Register
+    </title>
+</head>
 
-        tr:nth-child(even){
-            background-color: #dddddd;
-        }
-    </style>
-    <body>
-        <div class="wrapper">
-            <div class="tablecontent">
+<style>
+    html{
+        background-color: #56baed;
+    }
+    body{
+        height: 100vh;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
 
-                <table>
-                    <thead>
-                        <th>Sr No.</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Address</th>
-                        <th>Action</th>
-                    </thead>
+    }
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+    .formcontent{
+        background: white;
+        padding: 30px;
+        width: 25%;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    }
+    .icon{
+        width: 40%;
+    }
+    .myinput{
+        background-color: #f6f6f6;
+        border: 2px solid #f6f6f6;
+        padding: 15px 30px;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border-radius: 5px;
+        text-align: center;
+    }
 
-            </div>
+    .mybutton{
+        background-color: #56baed;
+        border: none;
+        color: white;
+        padding: 15px 80px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin: 20px;
+    }
+    .mybutton:hover{
+        background-color: #39ace7;
+    }
+
+    h2{
+        font-size: 30px;
+        border-bottom: 2px solid #5fbae9;
+        
+        margin: 40px 8px 10px 8px;
+        text-align: center;
+    }
+    ul li{
+        text-decoration: none;
+        display: inline-block;
+        border: 3px solid steelblue;
+        padding: 10px;
+    }
+    ul li:hover{
+        background-color: skyblue;
+        transition: 0.5s;
+    }
+
+</style>
+
+<body>
+
+<ul>
+        <a href="index.php"><li>Dashboard</li></a>
+        <a href="datalist.php"><li>Datalist</li></a>
+        <a href="register.php"><li>Register</li></a>
+    </ul>
+    
+    <div class="wrapper">
+        <div class="formcontent">
+            <h2>Register</h2>
+            <image src="login.png" class="icon" >
+            
+            <form>
+                <input type="text" class="myinput" name="firstname" placeholder="First Name" >
+                <input type="text" class="myinput" name="lastname" placeholder="Last Name" >
+                <input type="email" class="myinput" name="email" placeholder="Email">
+                <input type="number" class="myinput" name="mobile" placeholder="Mobile No.">
+                <textarea type="text" class="myinput" name="address" placeholder="Address" rows="3"></textarea>
+                <button type="submit" name="submit" class="mybutton" >REGISTER</button>
+            </form>
         </div>
-    </body>
+    </div>
+
+</body>
+
 </html>
