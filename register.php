@@ -64,10 +64,26 @@
         margin: 40px 8px 10px 8px;
         text-align: center;
     }
+    ul li{
+        text-decoration: none;
+        display: inline-block;
+        border: 3px solid steelblue;
+        padding: 10px;
+    }
+    ul li:hover{
+        background-color: skyblue;
+        transition: 0.5s;
+    }
 
 </style>
 
 <body>
+
+<ul>
+        <a href="index.php"><li>Dashboard</li></a>
+        <a href="datalist.php"><li>Datalist</li></a>
+        <a href="register.php"><li>Register</li></a>
+    </ul>
     
     <div class="wrapper">
         <div class="formcontent">
