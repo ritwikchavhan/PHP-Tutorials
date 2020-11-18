@@ -1,3 +1,26 @@
+<?php
+
+    if( isset( $_POST['submit'] ) ){
+
+       $connect =  mysqli_connect("localhost","root","","php_tutorial");
+
+       $firstname = $_POST['firstname'];
+       $lastname = $_POST['lastname'];
+       $email = $_POST['email'];
+       $mobile = $_POST['mobile'];
+       $address = $_POST['address'];
+        
+       $register = mysqli_query( $connect , "INSERT INTO `register`( `firstname`, `lastname`, `email`, `mobile`, `address`) VALUES ('$firstname','$lastname','$email','$mobile','$address')" );
+
+       if( $register ){
+           echo "Successfully Registered.";
+       }else{
+           echo "Registration Failed.";
+       }
+    }
+
+?>
+
 <html>
 
 <head>
@@ -87,10 +110,10 @@
     
     <div class="wrapper">
         <div class="formcontent">
-            <h2>Register</h2>
+            <h2>REGISTER</h2>
             <image src="login.png" class="icon" >
             
-            <form>
+            <form method="POST" >
                 <input type="text" class="myinput" name="firstname" placeholder="First Name" >
                 <input type="text" class="myinput" name="lastname" placeholder="Last Name" >
                 <input type="email" class="myinput" name="email" placeholder="Email">
