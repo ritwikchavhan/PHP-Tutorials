@@ -77,50 +77,29 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Ritwik Chavhan</td>
-                            <td>ritwikchavhan19@gmail.com</td>
-                            <td>1234567890</td>
-                            <td>Chavhan Qtr.</td>
-                            <td>
-                                <button class="delete">Delete</button>
-                                <button class="update">Update</button>
-                            </td>
-                        </tr>
+                        <?php 
+                            $connect =  mysqli_connect("localhost","root","","php_tutorial");
+
+                            $registerlist = mysqli_query($connect , "SELECT * FROM `register`");
+                            $counter = 1;
+                            while( $row = mysqli_fetch_assoc($registerlist) ){
+                        ?>
+                                <tr>
+                                    <td><?php echo $counter ?></td>
+                                    <td><?php echo $row['firstname'].' '.$row['lastname'] ?></td>
+                                    <td><?php echo $row['email'] ?></td>
+                                    <td><?php echo $row['mobile'] ?></td>
+                                    <td><?php echo $row['address'] ?></td>
+                                    <td>
+                                        <button class="delete">Delete</button>
+                                        <button class="update">Update</button>
+                                    </td>
+                                </tr>
+                        <?php
+                        $counter++;
+                        }  
+                    ?>
+                        
                         
                     </tbody>
                 </table>
