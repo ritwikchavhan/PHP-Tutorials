@@ -1,3 +1,20 @@
+<?php 
+    error_reporting(0);
+    if( $_GET['deleteid'] ){
+
+        $id = $_GET['deleteid'];
+        $connect =  mysqli_connect("localhost","root","","php_tutorial");
+
+        $delete = mysqli_query($connect , "DELETE FROM `register` WHERE `id` = $id ");
+
+        if( $delete ){
+            echo "Data Deleted.";
+        }else{
+            echo "Delete Failed.";
+        }
+    }
+
+?>
 <html>
     <head>
         <title>
@@ -91,7 +108,7 @@
                                     <td><?php echo $row['mobile'] ?></td>
                                     <td><?php echo $row['address'] ?></td>
                                     <td>
-                                        <button class="delete">Delete</button>
+                                        <a href="datalist.php?deleteid=<?php echo $row['id']; ?>"><button class="delete">Delete</button></a>
                                         <button class="update">Update</button>
                                     </td>
                                 </tr>
