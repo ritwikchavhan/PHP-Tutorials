@@ -44,7 +44,15 @@
         <div class="wrapper">
             <div class="dashboardcontent">
                 <h1 class="heading">REGISTRATION</h1>
-                <h1>5</h1>
+                <h1>
+                    <?php
+                    $connect =  mysqli_connect("localhost","root","","php_tutorial");
+
+                    $count = mysqli_query($connect , "SELECT * FROM `register`");
+
+                    echo mysqli_num_rows($count);
+                    ?>
+                </h1>
             </div>
         </div>
     </body>
